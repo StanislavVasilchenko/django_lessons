@@ -6,9 +6,8 @@ NULLABLE = {"blank": True, "null": True}
 class Student(models.Model):
     first_name = models.CharField(max_length=100, verbose_name="Имя")
     last_name = models.CharField(max_length=100, verbose_name="Фамилия")
-    avatar = models.ImageField(
-        upload_to="students/", verbose_name="Аватар", **NULLABLE
-    )
+    avatar = models.ImageField(upload_to="students/", verbose_name="Аватар",
+                               **NULLABLE)
 
     is_activ = models.BooleanField(default=True, verbose_name="учится")
 
