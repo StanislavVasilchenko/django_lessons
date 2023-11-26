@@ -1,0 +1,6 @@
+flake8
+flake8-isort
+black
+djlint
+pylint-django
+pre-commit
