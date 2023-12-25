@@ -1,9 +1,27 @@
 <div class="container">
+    {% if user.is_authenticated %}
+        <p class="float-end mb-1">
+            <a href="{% url 'users:logout' %}">Выйти</a>
+        </p>
+        <p class="float-end mb-1">
+            <a href="{% url 'users:profile' %}">Профиль</a>
+        </p>
+    {% else %}
+        <p class="float-end mb-1">
+            <a href="{% url 'users:login' %}">Войти</a>
+        </p>
+        <p class="float-end mb-1">
+            <a href="{% url 'users:register' %}">Регистрация</a>
+        </p>
+    {% endif %}
     <p class="float-end mb-1">
         <a href="{% url 'main:index' %}">Главная</a>
     </p>
     <p class="float-end mb-1">
         <a href="{% url 'main:contact' %}">Контакты</a>
+    </p>
+    <p class="float-end mb-1">
+        <a href="{% url 'materials:list' %}">Материалы</a>
     </p>
     <p class="mb-1">&copy;{% now 'Y' %}</p>
     <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a
